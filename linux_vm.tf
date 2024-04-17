@@ -11,12 +11,6 @@ data "template_cloudinit_config" "config" {
   }
 }
 
-resource "tls_private_key" "key_pair" {
-  algorithm = "RSA"
-  rsa_bits  = 2048
-}
-
-
 resource "azurerm_linux_virtual_machine" "vm" {
   name                  = "test-vm-linux"
   resource_group_name   = azurerm_resource_group.rg.name

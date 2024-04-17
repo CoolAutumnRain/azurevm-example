@@ -7,6 +7,18 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 3.0"
     }
+    template = {
+      source  = "hashicorp/template"
+      version = "~> 2.2"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
+    }
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 3.0"
+    }
   }
 }
 

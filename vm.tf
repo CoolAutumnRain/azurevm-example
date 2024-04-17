@@ -27,7 +27,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
 }
 
 data "template_file" "example_script" {
-  template = file(" myscript.ps1")
+  template = file("myscript.ps1")
   vars = {
     terraform_template_machine_name = azurerm_windows_virtual_machine.vm.name
     terraform_template_network      = var.vnet_name

@@ -1,0 +1,1 @@
+Write-Host "This is templated in terraform. I'm in the machine $terraform_template_machine_name and I'm in the network $terraform_template_network that you passed in as a variable."

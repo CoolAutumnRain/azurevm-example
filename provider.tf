@@ -1,0 +1,17 @@
+terraform {
+  # License change after 1.5.7, don't go above
+  required_version = "~> 1.1, <= 1.5.7"
+
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0"
+    }
+  }
+}
+
+
+provider "azurerm" {
+  features {}
+  subscription_id = "your-subscription-id"
+}

@@ -15,5 +15,5 @@ packages:
 
 runcmd:
   - apt-get -y update 
-  - echo "runcmd ad hoc script\n" >> helloworld
-  - echo "private ip address is ${ip_addr} and it's templated from terraform" > helloworld
+  - echo "runcmd ad hoc script\n" > helloworld
+  - echo "private ip address is ${ip_addr} and it's templated from terraform" >> helloworld

@@ -5,8 +5,15 @@ resource "azurerm_resource_group" "rg" {
 }
 
 # This ends up in clear text in state FYI, for non-test use a key vault
+# pw for windows vm
 resource "random_password" "admin_password" {
   length = 24
+}
+
+# key-pair for ubuntu vm
+resource "tls_private_key" "key_pair" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
 }
 
 /*

@@ -1,0 +1,19 @@
+#cloud-config:
+package_update: true
+package_upgrade: true
+
+packages: 
+
+  # Few random packages for PoC
+  - jq
+  - htop
+  - golang-go
+  - vim
+  - azure-cli
+  - nodejs
+  - unzip
+
+runcmd:
+  - apt-get -y update 
+  - echo "runcmd ad hoc script\n" >> helloworld
+  - echo "private ip address is ${ip_addr} and it's templated from terraform" > helloworld

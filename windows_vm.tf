@@ -1,11 +1,11 @@
 resource "azurerm_windows_virtual_machine" "vm" {
-  name                = "test-vm"
+  name                = "test-vm-windows"
   computer_name       = "testvm"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   size                = "Standard_B2s"
   network_interface_ids = [
-    azurerm_network_interface.nic.id
+    azurerm_network_interface.nic["windows"].id
   ]
 
   admin_username = "testadmin"
@@ -27,7 +27,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
 }
 
 data "template_file" "example_script" {
-  template = file("myscript.ps1")
+  template = file("./scripts/myscript.ps1")
   vars = {
     terraform_template_machine_name = azurerm_windows_virtual_machine.vm.name
     terraform_template_network      = var.vnet_name
